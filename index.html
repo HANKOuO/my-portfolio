@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-TW" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>個人作品集</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="scroll-progress"></div>
+
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">LAB.</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">首頁</a></li>
+          <li><a href="#about">關於我</a></li>
+          <li><a href="#projects">多元實作作品</a></li>
+          <li><button id="admin-console-trigger" class="btn-navbar-admin">🔧</button></li>
+          <li><button id="theme-toggle" aria-label="切換深淺色模式">🌙</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section game-first-person-env">
+      <div class="crt-screen-filter"></div>
+
+      <div id="hero-main-content" class="game-hud-layout game-loading">
+        
+        <div class="hud-player-profile">
+          <div class="avatar-pixel-frame">
+            <div class="avatar-crop-box">
+              <img src="角色圖.png" alt="玩家像素頭像" class="hud-avatar-sprite">
+            </div>
+          </div>
+          <div class="player-title-tags">
+            <div class="p-name">HANKUUU</div>
+            <div class="p-lv">Lv.22 通才</div>
+          </div>
+        </div>
+
+        <div class="hud-game-stats-panel font-mono">
+          <div class="hud-stat-row-top">
+            <div class="hud-stat-item"><span class="stat-icon">📶</span> PING: 7ms</div>
+            <div class="hud-stat-item"><span class="stat-icon">📊</span> FPS: 60</div>
+          </div>
+          <div class="hud-stat-wallet-row">
+            <div class="hud-wallet-item coin-bounce"><span class="stat-icon">🪙</span> GOLD: 99,999</div>
+            <div class="hud-wallet-item gem-pulse"><span class="stat-icon">💎</span> GEM: 718</div>
+          </div>
+        </div>
+
+        <div class="rpg-dialogue-center-box">
+          <div class="rpg-inner-border">
+            <h1 id="typewriter-title" class="rpg-main-title"></h1>
+            <p id="typewriter-sub" class="rpg-sub-body" style="display:none;"></p>
+            
+            <div class="hero-cta text-center">
+              <a href="#projects" class="btn btn-pixel-style">> ENTER LAB (進入實驗室看作品)</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="about" class="about-section about-cave-env">
+      <div class="crt-screen-filter"></div>
+      <div class="container rpg-about-container">
+        <h2 class="section-title">CHARACTER / 關於我</h2>
+        <div class="pixel-about-grid">
+          <div class="about-photos scroll-reveal">
+            <div class="pixel-photo-frame photo-main">
+              <img src="my-photo.jpg" alt="個人形象照 1" class="pixel-img">
+              <span class="photo-tag">【 主裝備 】</span>
+            </div>
+            <div class="pixel-photo-frame photo-sub">
+              <img src="my-photo2.jpg" alt="個人形象照 2" class="pixel-img">
+              <span class="photo-tag">【 副裝備 】</span>
+            </div>
+          </div>
+          
+          <div class="about-info scroll-reveal">
+            <h3>莊昆翰 <span class="lv-badge">Lv.22 通才</span></h3>
+            <p class="dept-text">國立嘉義大學 - 數位學習設計與管理學系</p>
+            <p class="bio-p">
+              具備跨越「專案管理、視覺美術、網頁前端開發、數位教材設計」的跨領域整合力。
+              我深信「沒有實體原型就是空談」，擅長與 AI 協作並從零手刻網頁，將教學理論與心理學機制落地為高質感的數位產品。
+            </p>
+            
+            <ul class="status-list">
+              <li><strong>📧 信箱：</strong><a href="mailto:kunhan0718@gmail.com">kunhan0718@gmail.com</a></li>
+              <li><strong>📱 電話：</strong>0921-177-395</li>
+              <li><strong>📸 IG：</strong><a href="https://instagram.com/hankuuu_" target="_blank">@hankuuu_</a></li>
+            </ul>
+
+            <div class="about-actions">
+              <button class="btn btn-pixel-style" data-modal-target="about-modal">學習歷程 📜</button>
+              <a href="resume.pdf" download="莊昆翰_個人履歷.pdf" class="btn btn-pixel-style secondary-pixel-btn">履歷表 📥</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="posts-section projects-portal-env">
+      <div class="crt-screen-filter"></div>
+      <div class="container rpg-projects-container" style="width: 100%;">
+        <h2 class="section-title">ADVANCEMENTS / 成就進階</h2>
+
+        <div class="filter-btn-group">
+          <button class="filter-btn-pixel active" data-filter-target="all">全部</button>
+          <button class="filter-btn-pixel" data-filter-target="y1">大一</button>
+          <button class="filter-btn-pixel" data-filter-target="y2">大二</button>
+          <button class="filter-btn-pixel" data-filter-target="y3">大三</button>
+          <button class="filter-btn-pixel" data-filter-target="y4">大四</button>
+        </div>
+
+        <div class="mc-advancement-panel">
+          <div class="mc-tree-container" id="mc-tree-dynamic-root">
+            </div>
+        </div>
+        
+      </div>
+    </section>
+  </main>
+
+  <div id="about-modal" class="modal-overlay">
+    <div class="modal-wrapper">
+      <header class="modal-header">
+        <div class="modal-meta">學習歷程 / My Journey</div>
+        <button class="close-button modal-close-trigger" aria-label="關閉視窗">&times;</button>
+      </header>
+      <div class="modal-body">
+        <div class="profile-timeline" style="padding-left: 0;">
+          <h3 class="timeline-title">學期修煉精華 (Semester Insights)</h3>
+          <div class="timeline-container">
+            <div class="timeline-item">
+              <span class="timeline-period">大一學年 / 迷糊</span>
+              <p>剛進系上時完全不知道在學什麼，一下畫畫設計、一下學教育管理，課程太多元常把東西搞混，渾渾噩噩過完了一年。但在迷茫中，國文課做出的多媒體電子書意外入圍《國際華文電子書大賽》，於是開始對這個系所學的內容有興趣。</p>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-period">大二學年 / 不滿</span>
+              <p>這年終於跟上系上的 Tempo，隨著微電影、AI 插畫與攝影等作業累積，作品越來越多。但我對自己很不滿意，感覺自己不只如此，作品明明可以更好，做出來卻不怎麼樣。</p>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-period">大三學年 / 整合</span>
+              <p>大三迎來了轉折。我開始將大一學到的管理學轉化為分組報告的武器，擔任 PM 規劃時程、分派工作；同時，大二累積的美感，讓我在主導數位平台的 UI/UX 設計時更得心應手。那些曾經搞混的零散課程，終於在此刻融合成我的跨領域整合力。</p>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-period">大四學年 / 落地</span>
+              <p>面對大四畢業專案，我深信「沒有實體，任何概念都是空談」。為了打破過去做不好的困境，我選擇與 AI 協作、從零手刻前端網頁。我成功將教學理論落地為《妖你來記帳》的互動原型並手工打造本站，完成了從迷茫學生到全棧產品實作者的修煉。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="modal-footer">
+        <button class="btn btn-pixel-style secondary-pixel-btn modal-close-trigger">關閉歷程</button>
+      </footer>
+    </div>
+  </div>
+
+  <div id="case-study-modal" class="modal-overlay">
+    <div class="modal-wrapper">
+      <header class="modal-header">
+        <div class="modal-meta">深度案例分析 / Case Study</div>
+        <button class="close-button modal-close-trigger" aria-label="關閉視窗">&times;</button>
+      </header>
+      <div class="modal-body">
+        <h2 class="modal-title">從零打造遊戲化理財 App《妖你來记帳》：我的全棧產品設計與跨領域實踐</h2>
+        <div class="case-section">
+          <h3>一、 專案背景與核心痛點</h3>
+          <p>大家都在記帳，幕後衝動消費還是停不下來。團隊發現：<strong>現代人缺的不是記帳工具，而是正確的消費觀。</strong> 市面上的軟體只會被動告訴你花多少錢，無法主動制約行為。飲食娛樂過度超支？我們決定做一款「結合心理學、像玩遊戲一樣」的記帳 App，幫使用者戒掉盲目消費。</p>
+        </div>
+        <div class="case-section">
+          <h3>二、 我在三人團隊中的職責</h3>
+          <ul>
+            <li><strong>專案管理 (PM) & 核心概念</strong>：主導 40% 的產品核心概念，規劃 W1-W20 全期時程並分配團隊成員工作權責。</li>
+            <li><strong>視覺美術 (ART)</strong>：操刀整個 App 的視覺風格、介面 UI 與怪獸插畫設計。</li>
+            <li><strong>前端開發 (PRO)</strong>：一邊向 AI 請教一邊手刻網頁，硬是敲出目前 30% 的線上功能原型。</li>
+          </ul>
+        </div>
+        <div class="case-section">
+          <h3>三、 產品三大核心遊戲化機制</h3>
+          <div class="theory-box">
+            <h4>1. 生存倒計時（行為學派）</h4>
+            <p>帳戶餘額直接連結到「這個月還能活多少天」。花錢就像扣血，超有生存危機感！透過每日預算上限，形成制約超支衝動的警示。</p>
+          </div>
+          <div class="theory-box">
+            <h4>2. 降妖圖鑑與月曆式帳單（認知學派）</h4>
+            <p>把開銷變成「神靈」與「小鬼」，圓環圖表一目了然。提升使用者對支出結構的認知，一眼看穿隱藏在工作壓力、社交焦慮後的消費漏洞與情緒支出黑洞。</p>
+          </div>
+          <div class="theory-box">
+            <h4>3. 「需要想嗎？」強制介入機制（建構學派）</h4>
+            <p>在消費發生的當下強制介入思考，讓大腦重新辨識生存必要與感官欲望的邊界。配合模擬社會誘惑情境的「飛升試煉」題目，引導使用者建構出屬於自己的生活哲學。</p>
+          </div>
+        </div>
+        <div class="case-section">
+          <h3>四、 使用者真實測試數據與反思</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>測試評鑑指標</th>
+                <th>平均得分 (五分制)</th>
+                <th>核心成效反思</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>培養正確消費觀</strong></td>
+                <td>4.40 / 5.00</td>
+                <td>遊戲化與心理學學派介入機制，能有效引發理性思考。</td>
+              </tr>
+              <tr>
+                <td><strong>試煉題目對理性消費的幫助</strong></td>
+                <td>4.27 / 5.00</td>
+                <td>生活化的情境模擬題得到高度認同。</td>
+              </tr>
+              <tr>
+                <td><strong>介面配色美觀乾淨</strong></td>
+                <td>4.27 / 5.00</td>
+                <td>美術風格吸引記帳慾望，但部分用戶反應可再更簡潔。</td>
+              </tr>
+              <tr>
+                <td><strong>支出紀錄的需想佔比反思</strong></td>
+                <td>4.07 / 5.00</td>
+                <td>成功啟動元認知，協助使用者查覺情緒支出。</td>
+              </tr>
+              <tr>
+                <td><strong>找出適合自己的消費觀</strong></td>
+                <td>4.27 / 5.00</td>
+                <td>得分相較正確消費觀略低，為後續版本需優化的導向。</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="case-note"><strong>目前開發限制與未來展望：</strong> 當前原型開發進度約為 30%，部分視覺反饋仍待完善。使用者回饋指出「部分畫面偶有卡頓」且「缺乏功能導覽介紹」。未來優化方案將聚焦於精簡程式碼、修正系統 Bug，並加強個人化儲蓄目標的追蹤與動態提醒機制。</p>
+        </div>
+      </div>
+      <footer class="modal-footer">
+        <button class="btn btn-pixel-style secondary-pixel-btn modal-close-trigger">關閉案例分析</button>
+        <a href="https://hankouo.github.io/monster-practice/" target="_blank" class="btn btn-pixel-style">線上原型 ↗</a>
+      </footer>
+    </div>
+  </div>
+
+  <div id="illustration-modal" class="modal-overlay">
+    <div class="modal-wrapper">
+      <header class="modal-header">
+        <div class="modal-meta">數位多媒體美術 / AI Co-Creation</div>
+        <button class="close-button modal-close-trigger" aria-label="關閉視窗">&times;</button>
+      </header>
+      <div class="modal-body">
+        <h2 class="modal-title">《格林童話：金鳥篇》繪本電繪實驗</h2>
+        <div class="case-section">
+          <h3>一、 創作概念與 AI 協作</h3>
+          <p>此作業基於經典格林童話進行現代繪本的數位轉譯。核心在於實驗前瞻性的<strong>「人機共創工作流」</strong>——讓 AI 負責拓寬創意，人類負責品質細節。</p>
+        </div>
+        <div class="case-section">
+          <h3>二、 我的多媒體人機協作工作流</h3>
+          <ul>
+            <li><strong>AI 生成構圖</strong>：利用 AI 快速跑出基礎的分鏡與構圖草稿。</li>
+            <li><strong>手工精細描邊</strong>：使用電繪板，親手進行精細的二次元去噪點、線條修正與鋼筆描邊。</li>
+            <li><strong>手工色彩塗裝</strong>：全圖的色彩調性、光影暈染與細節層次，均由我本人手工繪製。</li>
+          </ul>
+        </div>
+        <div class="case-section">
+          <h3>三、 實體作品成果展示</h3>
+          <div class="illustration-gallery">
+            <div class="gallery-item illus-avatar-box">
+              <img src="角色設定.png" alt="金鳥篇角色設定" class="gallery-img">
+              <span class="img-caption">▲ 初始角色設定</span>
+            </div>
+            <div class="carousel-container">
+              <div class="carousel-slides">
+                <div class="carousel-slide active">
+                  <img src="插畫1（親自上色.png" alt="插畫作品 1" class="gallery-img">
+                  <span class="img-caption">▲ 段落一：園丁兒子張弓射金烏</span>
+                </div>
+                <div class="carousel-slide">
+                  <img src="插畫2（親自上色.png" alt="插畫作品 2" class="gallery-img">
+                  <span class="img-caption">▲ 段落二：聆聽狐狸忠告並伏背奔馳</span>
+                </div>
+                <div class="carousel-slide">
+                  <img src="插畫3（親自上色.png" alt="插畫作品 3" class="gallery-img">
+                  <span class="img-caption">▲ 段落三：小兒子不幸墜落乾涸河床</span>
+                </div>
+              </div>
+              <button class="carousel-nav-btn prev-btn" id="illus-prev-btn" aria-label="上一張">&#10094;</button>
+              <button class="carousel-nav-btn next-btn" id="illus-next-btn" aria-label="下一張">&#10095;</button>
+              <div class="carousel-dots">
+                <span class="dot active" data-slide-index="0"></span>
+                <span class="dot" data-slide-index="1"></span>
+                <span class="dot" data-slide-index="2"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="modal-footer">
+        <button class="btn btn-pixel-style secondary-pixel-btn modal-close-trigger">關閉美術案例</button>
+      </footer>
+    </div>
+  </div>
+
+  <div id="photography-midterm-modal" class="modal-overlay">
+    <div class="modal-wrapper">
+      <header class="modal-header">
+        <div class="modal-meta">視覺美感表達 / 期中專案解析</div>
+        <button class="close-button modal-close-trigger" aria-label="關閉視窗">&times;</button>
+      </header>
+      <div class="modal-body">
+        <h2 class="modal-title">期中影像實驗：主體概念攝影《框取室界》</h2>
+        <div class="case-section">
+          <h3>一、 核心理念：視覺減法</h3>
+          <p>核心理念是「用減法框取視界」，拋棄日常雜亂的背景，純粹利用幾何結構與畫面鏡頭的物理遮擋來說故事。</p>
+        </div>
+        <div class="case-section">
+          <h3>二、 期中精彩作品展示</h3>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img src="contrast.jpg" alt="CONTRAST" class="gallery-img">
+              <span class="img-caption">▲ 作品《CONTRAST》：前景遮擋</span>
+            </div>
+            <div class="gallery-item">
+              <img src="focus.jpg" alt="FOCUS" class="gallery-img">
+              <span class="img-caption">▲ 作品《FOCUS》：框架構圖</span>
+            </div>
+            <div class="gallery-item">
+              <img src="symmetry.jpg" alt="SYMMETRY" class="gallery-img">
+              <span class="img-caption">▲ 作品《SYMMETRY》：三角層次</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="modal-footer">
+        <button class="btn btn-pixel-style secondary-pixel-btn modal-close-trigger">關閉影像展</button>
+      </footer>
+    </div>
+  </div>
+
+  <div id="photography-final-modal" class="modal-overlay">
+    <div class="modal-wrapper">
+      <header class="modal-header">
+        <div class="modal-meta">視覺美感表達 / 期末專案解析</div>
+        <button class="close-button modal-close-trigger" aria-label="關閉視窗">&times;</button>
+      </header>
+      <div class="modal-body">
+        <h2 class="modal-title">期末影像實驗：主題概念攝影《REFLECT 反射》</h2>
+        <div class="case-section">
+          <h3>一、 核心理念：光影解構</h3>
+          <p>進階實驗鏡子、玻璃與水面的物理特性，捕捉日常生活中被介質折射、疊影的非日常光影。</p>
+        </div>
+        <div class="case-section">
+          <h3>二、 期末精彩作品展示</h3>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img src="infinite_self.png" alt="複製與無限" class="gallery-img">
+              <span class="img-caption">▲ 作品《複製與無限》：多重反射</span>
+            </div>
+            <div class="gallery-item">
+              <img src="distortion.png" alt="扭曲" class="gallery-img">
+              <span class="img-caption">▲ 作品《扭曲》：幾何折射</span>
+            </div>
+            <div class="gallery-item">
+              <img src="water_mirror.png" alt="水鏡" class="gallery-img">
+              <span class="img-caption">▲ 作品《水鏡 Wills》：高對比剪影</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="modal-footer">
+        <button class="btn btn-pixel-style secondary-pixel-btn modal-close-trigger">關閉影像展</button>
+      </footer>
+    </div>
+  </div>
+
+  <button id="back-to-top" aria-label="回到頂部">↑</button>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 莊昆翰. Powered by pure HTML/CSS/JS hosted on GitHub.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+
+  <div id="admin-auth-modal" class="modal-overlay">
+    <div class="modal-wrapper" style="max-width: 400px; text-align: center;">
+      <header class="modal-header">
+        <div class="modal-meta">🔒 SECURITY GATE / 系統鎖定</div>
+        <button class="close-button modal-close-trigger" aria-label="關閉視窗">&times;</button>
+      </header>
+      <div class="modal-body" style="padding: 30px 20px;">
+        <div class="theory-box" style="margin-bottom: 20px;">
+          <h4 style="font-family: 'Press Start 2P', monospace; font-size: 11px; color: var(--accent-color); margin-bottom: 12px;">ENTER ACCESS KEY</h4>
+          <p style="font-size: 13px; margin-bottom: 15px;">此區域受加密防護，請輸入開發者金鑰：</p>
+          
+          <input type="password" id="admin-auth-password" class="admin-input-pixel" style="text-align: center; font-size: 18px; letter-spacing: 4px;" placeholder="••••••" required>
+          <div id="auth-error-msg" style="color: #ff3333; font-size: 12px; margin-top: 8px; font-weight: bold; display: none;">▶ 驗證失敗：密碼錯誤！</div>
+        </div>
+        
+        <button id="admin-auth-submit-btn" class="btn-pixel-style" style="width: 100%; background-color: var(--accent-color);">🔓 驗證並解鎖控制艙</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="admin-modal" class="modal-overlay">
+    <div class="modal-wrapper" style="max-width: 850px;">
+      <header class="modal-header">
+        <div class="modal-meta">⚙️ SYSTEM CONTROL DECK / 開發者控制艙</div>
+        <button class="close-button modal-close-trigger" aria-label="關閉視窗">&times;</button>
+      </header>
+      
+      <div class="modal-body admin-dashboard-grid">
+        
+        <div class="admin-console-panel">
+          <form id="admin-project-form">
+            <input type="hidden" id="form-project-id" value="">
+            
+            <div class="theory-box admin-form-card">
+              <div class="admin-panel-title">▶ MISSION CONFIG / 編輯任務</div>
+              
+              <div class="admin-form-group">
+                <label>🏷️ 選擇學年階層：</label>
+                <select id="form-year" class="admin-input-pixel" required>
+                  <option value="y1">大一：啟程</option>
+                  <option value="y2">大二：轉職</option>
+                  <option value="y3">大三：進化</option>
+                  <option value="y4">大四：不朽</option>
+                </select>
+              </div>
+
+              <div class="admin-form-group">
+                <label>🔮 節點圖示 (Emoji / Icon)：</label>
+                <input type="text" id="form-icon" class="admin-input-pixel" placeholder="例如: 😈, 🎨, 📊" required>
+              </div>
+
+              <div class="admin-form-group">
+                <label>⚔️ 專案核心標籤 (Meta)：</label>
+                <input type="text" id="form-meta" class="admin-input-pixel" placeholder="例如: 核心實作 / 核心功能 30%" required>
+              </div>
+
+              <div class="admin-form-group">
+                <label>📜 作品名稱 (Title)：</label>
+                <input type="text" id="form-title" class="admin-input-pixel" placeholder="例如: 妖你來記帳 APP" required>
+              </div>
+
+              <div class="admin-form-group">
+                <label>📝 作品簡介 (Description)：</label>
+                <textarea id="form-desc" class="admin-input-pixel" placeholder="簡單描述這個成就作品..." required></textarea>
+              </div>
+
+              <div class="admin-form-group">
+                <label>🔗 外部連結 / 彈窗目標 (可空)：</label>
+                <input type="text" id="form-link" class="admin-input-pixel" placeholder="網址或 data-modal-target 名稱">
+              </div>
+            </div>
+            
+            <div style="display: flex; gap: 15px; margin-top: 15px;">
+              <button type="submit" id="form-submit-btn" class="btn-pixel-style" style="flex: 1; background-color: var(--accent-color);">⚡ 更新成就</button>
+              <button type="button" id="form-cancel-btn" class="btn-pixel-style secondary-pixel-btn" style="flex: 1;">重設</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="admin-inventory-panel">
+          <div class="admin-panel-title">🎒 INVENTORY / 已解鎖成就明細</div>
+          <div id="admin-current-list" class="inventory-scroll-area">
+            </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
